@@ -37,13 +37,15 @@ function User(name, age) {
   this.age = age;
 }
 
-const myself = new User("Tyler", 27);
-console.log(`${myself.name} says "Javascript" is challenging!`);
+const myself = new User("Tyler", 19);
+console.log(
+  `${myself.name} says "Javascript" is challenging! ${myself.name} is also ${myself.age}.`
+);
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Principle 4
 
 // code example for Explicit Binding
-function me(breed, dog1, dog2, age1, age2) {
+function statement(breed, dog1, dog2, age1, age2) {
   return `Hello, my name is ${this.name} and I own two dogs, they are both ${breed}. The oldest is ${dog1}, and the youngest is ${dog2}. ${dog1} is ${age1}, and ${dog2} is ${age2}.`;
 }
 
@@ -66,7 +68,7 @@ let dogs = [
 ];
 
 console.log(
-  me.call(
+  statement.call(
     personalData,
     dogs[0].breed,
     dogs[1].name,
